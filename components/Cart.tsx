@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { useCart } from '../context/CartContext';
 
 const Cart: React.FC = () => {
@@ -45,9 +46,7 @@ const Cart: React.FC = () => {
         <strong>Total: ${state.items.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}</strong>
       </div>
       <div style={{ marginTop: 24 }}>
-        <a href='/checkout'>
-          <button>Checkout</button>
-        </a>
+        <Link href='/checkout/'>Go to Checkout</Link>
       </div>
     </div>
   );
